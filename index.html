@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κετογονικές Συνταγές</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- <h1>Συνταγές Κετογονικής Δίαιτας</h1> -->
+        <div id="search-filters">
+            <input type="text" id="search-text" placeholder="Αναζήτηση συνταγής...">
+            <select id="category-filter">
+                <option value="all">Όλες οι Κατηγορίες</option>
+            </select>
+            <!-- Νέο κουμπί για το προσωπικό πρόγραμμα -->
+            <button id="personalized-plan-btn" class="btn">Προσωπικό Πλάνο</button>
+        </div>
+    </header>
+
+    <main id="recipes-container">
+        <!-- Οι συνταγές θα φορτωθούν εδώ δυναμικά -->
+    </main>
+
+    <div id="pagination">
+        <button id="prev-page" disabled>Προηγούμενη</button>
+        <span id="current-page">1</span>
+        <button id="next-page">Επόμενη</button>
+    </div>
+
+    <!-- Modal για τις λεπτομέρειες της συνταγής -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-recipe-details">
+                <!-- Οι λεπτομέρειες της συνταγής θα φορτωθούν εδώ -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal για το προσωπικό πλάνο -->
+    <div id="personal-plan-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="wizard-steps">
+                <div id="step-1" class="wizard-step active">
+                    <h2>Βήμα 1: Εισάγετε τα στοιχεία σας</h2>
+                    <label for="age">Ηλικία:</label>
+                    <input type="number" id="age" placeholder="Ηλικία">
+                    <label for="weight">Βάρος (kg):</label>
+                    <input type="number" id="weight" placeholder="Βάρος σε κιλά">
+                    <label for="height">Ύψος (cm):</label>
+                    <input type="number" id="height" placeholder="Ύψος σε εκατοστά">
+                    <button id="next-step-1">Επόμενο Βήμα</button>
+                </div>
+
+                <div id="step-2" class="wizard-step">
+                    <h2>Βήμα 2: ΔΜΣ και Φυσική Δραστηριότητα</h2>
+                    <p id="bmi-value"></p>
+                    <p>Πόσο συχνά αθλείστε;</p>
+                    <select id="exercise-frequency">
+                        <option value="low">Λίγο/Καθόλου</option>
+                        <option value="moderate">Μέτρια</option>
+                        <option value="high">Συχνά</option>
+                    </select>
+                    <button id="prev-step-2">Προηγούμενο Βήμα</button>
+                    <button id="next-step-2">Επόμενο Βήμα</button>
+                </div>
+
+                <div id="step-3" class="wizard-step">
+                    <h2>Βήμα 3: Στόχοι Διατροφής</h2>
+                    <p>Ποιος είναι ο στόχος σας;</p>
+                    <select id="diet-goal">
+                        <option value="lose">Απώλεια βάρους</option>
+                        <option value="maintain">Συντήρηση βάρους</option>
+                        <option value="gain">Αύξηση βάρους</option>
+                    </select>
+                    <button id="prev-step-3">Προηγούμενο Βήμα</button>
+                    <button id="generate-plan">Δημιουργία Προγράμματος</button>
+                </div>
+
+                <div id="step-4" class="wizard-step">
+                    <h2>Το Προσωπικό σας Πλάνο</h2>
+                    <p id="generated-plan"></p>
+                    <button class="close-modal">Κλείσιμο</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

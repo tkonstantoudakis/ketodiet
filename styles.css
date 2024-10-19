@@ -1,0 +1,260 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #67d260;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+#search-filters {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#search-text, #category-filter {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.recipe-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#pagination button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+/* Recipe Modal Styling */
+#recipe-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#recipe-modal .modal-content {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#recipe-modal .modal-content img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+
+/* Personal Plan Modal Styling */
+#personal-plan-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#personal-plan-modal.show {
+  display: block;
+  opacity: 1;
+}
+
+#personal-plan-modal .modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInModal 0.5s ease;
+}
+
+@keyframes fadeInModal {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Button Styling */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Wizard Step Styling */
+.wizard-step {
+  display: none;
+}
+
+.wizard-step.active {
+  display: block;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #search-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #search-text, #category-filter {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 90%;
+  }
+
+  #recipes-container {
+    padding: 10px;
+  }
+
+  .recipe-card {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  #pagination button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #recipes-container {
+    padding: 5px;
+  }
+
+  .recipe-card {
+    width: 100%;
+  }
+
+  #pagination button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
