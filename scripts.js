@@ -4,7 +4,7 @@ let filteredRecipes = [];
 let allRecipes = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('./recipes.txt')
+    fetch('recipes.txt')
         .then(response => response.json())
         .then(data => {
             allRecipes = data;
